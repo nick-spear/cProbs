@@ -1,0 +1,4 @@
+*.o
+cprobs
+*.sublime-project
+*.sublime-workspace
