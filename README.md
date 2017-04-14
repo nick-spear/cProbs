@@ -77,5 +77,6 @@ Example: './cprobs countBits' will run only the test case for the
 
 Email me if you have questions or find any bugs.
 
-Storme Charette
-April 2017
+**Storme Charette**
+
+*stormecharette@gmail.com*
