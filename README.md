@@ -1,5 +1,4 @@
-INTRO
-=====
+# Introduction
 
     This package contains a list of short exercises that I think are helpful
     to master if you wish to improve your C or C++ skills. Some of them are
@@ -17,8 +16,7 @@ INTRO
     You should have done some tutorials in C or C++ before attempting these. The
     problems are not a substitute for proper tutorials, they are just challenges.
 
-RULES
-=====
+# Rules
 
     You cannot (or should not need to) create any classes, structs, helper functions,
     or global scope variables. Each solution should be self contained in the
@@ -28,8 +26,7 @@ RULES
     You may use previous functions you've written only if they appear above
     the current function.
 
-FILES
-=====
+# Files
 
     - main.cpp:
 
@@ -53,8 +50,7 @@ FILES
 
         This is where you implement your solutions.
 
-HOW TO BUILD
-============
+# How to Build
 
     1. Make sure you're on a Linux machine with 'g++' installed, or a Mac with
        XCode and the command line dev tools installed.
@@ -67,8 +63,7 @@ HOW TO BUILD
     just run 'make clean'. This will not touch any of your source code, just
     the compiled stuff.
 
-USING THE PROGRAM
-=================
+# Using the Program
 
     The program 'cprobs' takes <= 1 argument. With 0 args, it will just run
     all test cases until it either crashes from one of your bugs, or gets to the
@@ -78,7 +73,7 @@ USING THE PROGRAM
     Example: './cprobs countBits' will run only the test case for the
         'countBits' function.
 
-================================================================================
+---
 
 Email me if you have questions or find any bugs.
 
