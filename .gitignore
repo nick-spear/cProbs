@@ -2,3 +2,5 @@
 cprobs
 *.sublime-project
 *.sublime-workspace
+solutions.cpp
+Makefile_Solutions
