@@ -88,8 +88,8 @@ static void test_printArray2()
     std::cout << "\tThis function requires manual testing.\n\n";
 
     int array1[0] = {};
-    int array2[5] = {1, 2, 3, 4, 5};
-    int array3[10] = {25, 43, 859, 356, 90, 4, 78, 81, 252, 64};
+    int array2[5] = {5, 2, 7, 3, 5};
+    int array3[10] = {99, 98, 96, 93, 89, 84, 78, 72, 65, 53};
 
     std::cout << "\t(1)\n\t\t- Input:  []\n\t\t- Output: ";
     printArray2(array1, 0);
