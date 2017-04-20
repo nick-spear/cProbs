@@ -359,6 +359,8 @@ void insertionSort (int array[], int size);
 **
 **    - 'array': An array of integers.
 **    - 'size': The size of 'array'.
+**    - 'low': Index of the start of the subarray.
+**    - 'high': Index of the end of the subarray.
 **
 ** Output:
 **
@@ -366,11 +368,20 @@ void insertionSort (int array[], int size);
 **
 ** Restrictions:
 **
-**    Use merge sort.
+**    Use merge sort, implement it recursively.
 **
-** Hint: N/A
+** Hint:
+**
+**    To implement merge sort recursively, you will need to specify to each
+**    recursive call the subarray that it should act on. For each call, 'low'
+**    should be the index of the first element of the subarray of 'array', and
+**    'high' should be the index of the last element. The first call to
+**    'mergeSort' will have (low == 0), (high == size-1).
+**
+**    Another hint: during the merge phase, start by copying the two arrays
+**    you're merging to two temp arrays, then merge back into the return array.
 **/
-void mergeSort (int array[], int size);
+void mergeSort (int array[], int size, int low, int high);
 
 
 
@@ -386,6 +397,10 @@ void mergeSort (int array[], int size);
 ** Output:
 **
 **    Returns true if 'array' contains 'key', false otherwise.
+**
+** Restrictions:
+**
+**    Use an iterative implementation.
 **
 ** Hint: N/A
 **/

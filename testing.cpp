@@ -558,6 +558,11 @@ int compare (const void * a, const void * b)
 
 typedef void (*sortFunction) (int [], int);
 
+static void test_mergeSort (int array[], int size)
+{
+    mergeSort(array, size, 0, size - 1);
+}
+
 static void test_sort(sortFunction f)
 {
     std::cout << "\n* FUNCTION: ";
@@ -825,7 +830,7 @@ void runSingleTest(const std::string& id)
     else if(id == "bubbleSort") test_sort(bubbleSort);
     else if(id == "selectionSort") test_sort(selectionSort);
     else if(id == "insertionSort") test_sort(insertionSort);
-    else if(id == "mergeSort") test_sort(mergeSort);
+    else if(id == "mergeSort") test_sort(test_mergeSort);
     else if(id == "binarySearch") test_binarySearch();
     else if(id == "bipBop") test_bipBop();
     else if(id == "countCalls") test_countCalls();
@@ -856,7 +861,7 @@ void runAllTests()
     test_sort(bubbleSort);
     test_sort(selectionSort);
     test_sort(insertionSort);
-    test_sort(mergeSort);
+    test_sort(test_mergeSort);
     test_binarySearch();
     test_bipBop();
     test_countCalls();
