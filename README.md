@@ -2,7 +2,6 @@
 =======
 <<<<<<< HEAD
 >>>>>>> f139c130df874de373fcae59f77c565272418989
-Hi mom
 # Introduction
 
 This package contains a list of short exercises that I think are helpful
