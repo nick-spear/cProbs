@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> f139c130df874de373fcae59f77c565272418989
+Hi mom
 # Introduction
 
 This package contains a list of short exercises that I think are helpful
@@ -79,4 +84,12 @@ Email me if you have questions or find any bugs.
 
 **Storme Charette**
 
+<<<<<<< HEAD
 *stormecharette@gmail.com*
+=======
+*stormecharette@gmail.com*
+=======
+# cProbs
+Storme's c++ Challenge Problems, Attempted
+>>>>>>> 6cfa0bc1e0cfa05ebea54c86d55623b144d0260c
+>>>>>>> f139c130df874de373fcae59f77c565272418989
