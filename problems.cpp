@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <cstring>
 
 #include "problems.hpp"
 
@@ -98,21 +99,39 @@ bool stringsEqual1(const char str1[], const char str2[])
 
 bool stringsEqual2( const char str1[], const char str2[])
 {
-  // Didn't use index!
-  return stringsEqual1(str1, str2);
+  return str1 == str2;
+  // This feels so wrong
 }
 
 
 
 void copyString(const char src[], char dest[])
 {
+  std::strcpy(dest, src);
 }
 
 
 
 int stringToInteger(const char str[])
 {
-    return -1;
+  const char *iter = str;
+  int output = 0,
+         neg = 1;
+
+  if (*iter == '-') {
+    neg = -1;
+    ++iter;
+  }
+
+  while (*iter != '\0') {
+    output *= 10;
+    output += (*iter - 48);
+    ++iter;
+  }
+
+  if (neg == -1)
+    return neg * output;
+  return output;
 }
 
 
@@ -220,14 +239,58 @@ void insertionSort(int array[], int size)
     }
 }
 
+void merge(int array[], int size, int low, int high) {
+    int mid = (high + low) / 2,
+        iterVal = low;
+    int bothAr[high - low + 1];
 
+    for(int i = low; i <= high; i++) {
+      bothAr[i - low] = array[i];
+    }
+
+    // Iterative merge
+    int i = low, j = mid + 1;
+    while(i <= mid && j <= high) {
+      if (bothAr[i - low] < bothAr[j - low]) {
+        array[iterVal] = bothAr[i - low];
+        iterVal++;
+        i++;
+      } else {
+        array[iterVal] = bothAr[j - low];
+        iterVal++;
+        j++;
+      }
+    }
+
+    // Tidy up leftover values after a subarray runs out
+    while(i <= mid) {
+      array[iterVal] = bothAr[i - low];
+      i++;
+      iterVal++;
+    }
+
+    while(j <= high) {
+      array[iterVal] = bothAr[j - low];
+      j++;
+      iterVal++;
+    }
+
+    return;
+}
 
 void mergeSort(int array[], int size, int low, int high)
 {
     // TODO
+    if (high <= low)
+      return;
+
+    mergeSort(array, size, low, (high + low) / 2);
+    mergeSort(array, size, ((high + low)/2) + 1, high);
+    // For sake of tidyness
+    merge(array, size, low, high);
+
+    return;
 }
-
-
 
 bool binarySearch(int array[], int size, int key)
 {
@@ -255,21 +318,37 @@ bool binarySearch(int array[], int size, int key)
 
 void bipBop(int iterations)
 {
-    // TODO
+    for(int i = 1; i <= iterations; i++) {
+      if(i % 3 == 0)
+        std::cout << "bip";
+      if(i % 5 == 0)
+        std::cout << "bop";
+      else if (i % 3 != 0)
+        std::cout << i;
+      std::cout << std::endl;
+    }
 }
 
 
 
 int countCalls()
 {
-    // TODO
-    return -1;
+    static int count = 1;
+    return count++;
 }
 
 
 
 int breakingTheLaw(int outer, int inner)
 {
-    // TODO
-    return -1;
+    int o = 0, count = 0;
+
+    outerLoop:
+    while(o < outer) {
+      o++;
+      for(int i = 0; i < inner; i++)
+        count++;
+    }
+
+    return o;
 }

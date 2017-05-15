@@ -384,7 +384,6 @@ void insertionSort (int array[], int size);
 void mergeSort (int array[], int size, int low, int high);
 
 
-
 /*
 ** Function: binarySearch
 **
